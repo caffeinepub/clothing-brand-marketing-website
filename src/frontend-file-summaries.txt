@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for Home, Collections, About, and Contact pages, wrapped in CartProvider and SiteLayout.",
+  "frontend/src/components/layout/SiteLayout.tsx": "Layout wrapper component that provides consistent header and footer across all pages with a flex column structure.",
+  "frontend/src/components/layout/Header.tsx": "Responsive header component with brand logo, desktop navigation, mobile sheet menu, and cart indicator badge showing item count.",
+  "frontend/src/components/layout/Footer.tsx": "Footer component with brand tagline, quick links, social media icons, and copyright notice with caffeine.ai attribution.",
+  "frontend/src/pages/HomePage.tsx": "Home page featuring hero banner with CTA, featured products grid (6 items), and brand values section with three USP points.",
+  "frontend/src/pages/CollectionsPage.tsx": "Collections page displaying full product grid with click-to-open product details dialog functionality.",
+  "frontend/src/pages/AboutPage.tsx": "About page with lifestyle banner image and brand story content sections describing philosophy and craftsmanship.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page with validated form (name, email, message), contact information cards, and success state display.",
+  "frontend/src/components/products/ProductGrid.tsx": "Reusable product grid component displaying products as cards with hover effects and click handlers.",
+  "frontend/src/components/products/ProductDetailsDialog.tsx": "Modal dialog showing product details, size selection, and add-to-cart functionality with visual feedback.",
+  "frontend/src/state/cart/CartProvider.tsx": "React context provider managing cart state with session storage persistence and add/remove/clear operations.",
+  "frontend/src/state/cart/useCart.ts": "Custom hook providing access to cart context (items, count, add/remove/clear functions).",
+  "frontend/src/data/products.ts": "In-app product dataset with 12 products including details like name, category, price, image URLs, descriptions, and available sizes.",
+  "frontend/src/utils/validation.ts": "Validation utility functions for email format and required field checks used in contact form.",
+  "frontend/src/index.css": "Global styles with OKLCH-based warm neutral color palette (cream, stone, charcoal tones) for both light and dark modes, avoiding blue/purple dominance.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom font families (Inter, Playfair Display), extended shadows, and theme tokens matching the fashion brand aesthetic.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as backend has no methods; all data is client-side."
+}

@@ -1,0 +1,226 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Clothing Brand Marketing Website (Frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add responsive marketing site structure with persistent header/footer and routes for Home, Collections, About, Contact.",
+      "acceptanceCriteria": [
+        "Header includes brand logo/name and nav links to Home, Collections, About, Contact on desktop and a mobile-friendly menu on small screens.",
+        "Footer includes at least: copyright, social links (placeholders), and a short brand tagline.",
+        "All pages are responsive and usable on mobile, tablet, and desktop.",
+        "Routes or page views exist for Home, Collections, About, and Contact and are reachable via navigation."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell with client-side routing (Home, Collections, About, Contact) and wrap all routes in a persistent SiteLayout (header/footer)."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Implement a layout component that renders Header, main content container, and Footer consistently across all pages."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Create a responsive header with brand logo/name, desktop nav, and a mobile menu. Use the shadcn-ui components (e.g., Button, Sheet/Drawer, Navigation patterns) to support responsive navigation; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create a footer with copyright, placeholder social links, and a short brand tagline; ensure responsive spacing/typography."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the Home page route view and wire it into the router (rendered via App routes)."
+        },
+        {
+          "path": "frontend/src/pages/CollectionsPage.tsx",
+          "operation": "create",
+          "description": "Create the Collections page route view and wire it into the router (rendered via App routes)."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create the About page route view and wire it into the router (rendered via App routes)."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "create",
+          "description": "Create the Contact page route view and wire it into the router (rendered via App routes)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build Home page sections: hero with CTA, featured grid, and brand values/USP section.",
+      "acceptanceCriteria": [
+        "Home page has a hero section with a headline, short subtext, and a prominent CTA button that navigates to Collections.",
+        "Home page includes a featured products/collections section with at least 6 items displayed in a grid.",
+        "Home page includes a brand values/USP section with 3–4 concise points."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Implement hero banner (headline, subtext, CTA to Collections), featured section (6 items grid from in-app dataset), and values/USP section (3–4 points). Use shadcn-ui components (e.g., Button, Card) for CTAs and featured tiles; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/data/products.ts",
+          "operation": "create",
+          "description": "Add a simple in-app product/collection dataset that can power featured items on Home and the full grid on Collections (no backend)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement Collections product grid with product details view and a client-side cart indicator with session persistence.",
+      "acceptanceCriteria": [
+        "Collections page shows a grid of products with image, name, and price.",
+        "Selecting a product opens a detail view with larger image, description, price, and selectable size options.",
+        "An Add to Cart action exists and updates a client-side cart indicator (e.g., count in header).",
+        "Cart state persists at least for the current session (e.g., local state; persistence optional)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CollectionsPage.tsx",
+          "operation": "modify",
+          "description": "Render a browsable product grid from the in-app dataset and open a Product Details view (modal or route-level panel) on selection. Use shadcn-ui components (e.g., Card for tiles, Dialog for details modal, Button for actions) to support the UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/products/ProductGrid.tsx",
+          "operation": "create",
+          "description": "Create a reusable product grid component that displays image, name, and price and triggers selection for details view."
+        },
+        {
+          "path": "frontend/src/components/products/ProductDetailsDialog.tsx",
+          "operation": "create",
+          "description": "Create a product details modal component showing larger image, description, price, selectable sizes, and Add to Cart. Use shadcn-ui Dialog/Select or ToggleGroup-style components as appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/state/cart/CartProvider.tsx",
+          "operation": "create",
+          "description": "Implement a Cart context/provider with add-to-cart behavior and session persistence (e.g., sessionStorage) to retain cart state across refreshes in the same session."
+        },
+        {
+          "path": "frontend/src/state/cart/useCart.ts",
+          "operation": "create",
+          "description": "Add a hook to access cart state/actions (items count, add/remove if needed) from components without prop drilling."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Display a cart indicator (count) in the header that updates when Add to Cart is used. Use shadcn-ui Badge/Button patterns if available; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire CartProvider at an appropriate level so header and pages can access cart state (app-wide)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create a Contact page with a validated contact form and clear client-side success state (no backend).",
+      "acceptanceCriteria": [
+        "Form includes fields: name, email, message.",
+        "Client-side validation prevents submission with empty fields and invalid email format.",
+        "On submit, user sees a success confirmation state (and the app does not crash or navigate unexpectedly)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Implement the contact form (name, email, message), client-side validation (required fields + email format), and an on-screen success confirmation state. Use shadcn-ui Form/Input/Textarea/Button components as available; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/utils/validation.ts",
+          "operation": "create",
+          "description": "Add small shared validation helpers (e.g., email format check, required field helpers) to keep ContactPage logic clean and testable."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a cohesive fashion-brand visual theme (colors/typography/spacing/components) consistently across the site.",
+      "acceptanceCriteria": [
+        "A consistent design system is evident across buttons, headings, cards, and spacing.",
+        "Theme avoids default-looking styling and is applied uniformly across Home, Collections, About, and Contact.",
+        "No blue/purple-dominant palette is used unless required by assets."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global theme tokens (CSS variables used by Tailwind/shadcn-ui), typography defaults, and base element styles using a neutral fashion palette (e.g., black/cream/stone with a warm accent; avoid blue/purple dominance)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions as needed to support the brand look (typography scale, spacing, shadows) while keeping shadcn-ui token-driven colors intact."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Apply consistent page container widths, vertical rhythm, and section spacing so all pages share the same layout system."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Align header styling (type scale, link states, hover/focus, spacing) with the global theme. Use shadcn-ui primitives for consistent button/link styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Align footer styling (contrast, spacing, link styles) with the global theme for a cohesive look across pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add required generated brand visuals as static assets and integrate them into header, Home hero, and at least one additional section.",
+      "acceptanceCriteria": [
+        "All required generated images are present under frontend/public/assets/generated.",
+        "Logo is displayed in the site header.",
+        "Hero image is used in the Home hero section.",
+        "At least one additional generated image is used somewhere appropriate (e.g., About or Collections header)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/brand-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated brand logo asset at this exact path/filename for use in the header."
+        },
+        {
+          "path": "frontend/public/assets/generated/hero-banner.dim_1920x900.png",
+          "operation": "create",
+          "description": "Add the generated hero banner asset at this exact path/filename for use on the Home hero section."
+        },
+        {
+          "path": "frontend/public/assets/generated/lifestyle-banner.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated lifestyle banner asset at this exact path/filename for use as a supporting banner image (e.g., About section header)."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Render the logo image from frontend/public/assets/generated/brand-logo.dim_512x512.png in the header alongside/with the brand name (responsive sizing)."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Use frontend/public/assets/generated/hero-banner.dim_1920x900.png as the Home hero visual (with readable overlay/text treatment)."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Incorporate frontend/public/assets/generated/lifestyle-banner.dim_1600x900.png as a supporting banner/lifestyle image in a suitable layout section (responsive, accessible alt text)."
+        }
+      ]
+    }
+  ]
+}

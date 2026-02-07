@@ -1,0 +1,137 @@
+{
+  "kind": "build_request",
+  "title": "Clothing Brand Marketing Website",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive clothing brand website with core marketing pages: Home, Collections (product listing), About, and Contact, with a persistent header navigation and footer across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a web site for clothing brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header includes brand logo/name and nav links to Home, Collections, About, Contact on desktop and a mobile-friendly menu on small screens.",
+        "Footer includes at least: copyright, social links (placeholders), and a short brand tagline.",
+        "All pages are responsive and usable on mobile, tablet, and desktop.",
+        "Routes or page views exist for Home, Collections, About, and Contact and are reachable via navigation."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement Home page sections suitable for a clothing brand: hero banner with headline and call-to-action, featured collections/products, and a brand values/USP section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a web site for clothing brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page has a hero section with a headline, short subtext, and a prominent CTA button that navigates to Collections.",
+        "Home page includes a featured products/collections section with at least 6 items displayed in a grid.",
+        "Home page includes a brand values/USP section with 3–4 concise points."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement a Collections page that displays a browsable product grid (using a simple in-app dataset) and a Product Details view (modal or separate page) showing images, description, price, sizes, and an \"Add to Cart\" button (cart can be client-side only).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a web site for clothing brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Collections page shows a grid of products with image, name, and price.",
+        "Selecting a product opens a detail view with larger image, description, price, and selectable size options.",
+        "An Add to Cart action exists and updates a client-side cart indicator (e.g., count in header).",
+        "Cart state persists at least for the current session (e.g., local state; persistence optional)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement a Contact page with a contact form (name, email, message) that performs client-side validation and provides a clear success state without requiring a backend (e.g., using a mailto link or on-screen submission confirmation).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a web site for clothing brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes fields: name, email, message.",
+        "Client-side validation prevents submission with empty fields and invalid email format.",
+        "On submit, user sees a success confirmation state (and the app does not crash or navigate unexpectedly)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a cohesive, distinctive visual theme appropriate for a fashion/clothing brand (colors, typography, spacing, components) and enforce it consistently across all pages and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a web site for clothing brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A consistent design system is evident across buttons, headings, cards, and spacing.",
+        "Theme avoids default-looking styling and is applied uniformly across Home, Collections, About, and Contact.",
+        "No blue/purple-dominant palette is used unless required by assets."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add generated brand visuals as static assets and use them in the UI (logo in header, hero image on Home, and at least one supporting lifestyle/banner image). Store assets under frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create a web site for clothing brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required generated images are present under frontend/public/assets/generated.",
+        "Logo is displayed in the site header.",
+        "Hero image is used in the Home hero section.",
+        "At least one additional generated image is used somewhere appropriate (e.g., About or Collections header)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (compose them instead).",
+    "Do not edit immutable hook/entry files listed in SYSTEM_CONTEXT; implement new UI and logic in new or non-immutable files.",
+    "Backend must remain a single Motoko actor if any backend work is added later."
+  ],
+  "nonGoals": [
+    "Implementing real payment processing or checkout.",
+    "Integrating third-party authentication providers (only Internet Identity is supported).",
+    "Implementing a full admin dashboard/CMS for managing products.",
+    "Using external databases or third-party email delivery services."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Minimalist fashion brand logo, monochrome, clean geometric mark (brand-logo.dim_512x512.png)",
+      "Fashion editorial hero banner with neutral tones and ample negative space (hero-banner.dim_1920x900.png)",
+      "Lifestyle clothing photography-style banner with soft lighting and modern streetwear vibe (lifestyle-banner.dim_1600x900.png)"
+    ],
+    "edits": []
+  }
+}

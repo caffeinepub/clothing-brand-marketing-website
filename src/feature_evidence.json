@@ -1,0 +1,134 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-clothing-brand-website-with-core-marketing-pages-home-collections-product-listing-about-and-contact-with-a-persistent-header-navigation-and-footer-across-all-pages",
+      "featureTitle": "Create a responsive clothing brand website with core marketing pages: Home, Collections (product listing), About, and Contact, with a persistent header navigation and footer across all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/CollectionsPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-home-page-sections-suitable-for-a-clothing-brand-hero-banner-with-headline-and-call-to-action-featured-collections-products-and-a-brand-values-usp-section",
+      "featureTitle": "Implement Home page sections suitable for a clothing brand: hero banner with headline and call-to-action, featured collections/products, and a brand values/USP section.",
+      "files": [
+        "frontend/src/data/products.ts",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-collections-page-that-displays-a-browsable-product-grid-using-a-simple-in-app-dataset-and-a-product-details-view-modal-or-separate-page-showing-images-description-price-sizes-and-an-add-to-cart-button-cart-can-be-client-side-only",
+      "featureTitle": "Implement a Collections page that displays a browsable product grid (using a simple in-app dataset) and a Product Details view (modal or separate page) showing images, description, price, sizes, and an \"Add to Cart\" button (cart can be client-side only).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/products/ProductDetailsDialog.tsx",
+        "frontend/src/components/products/ProductGrid.tsx",
+        "frontend/src/pages/CollectionsPage.tsx",
+        "frontend/src/state/cart/CartProvider.tsx",
+        "frontend/src/state/cart/useCart.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-contact-page-with-a-contact-form-name-email-message-that-performs-client-side-validation-and-provides-a-clear-success-state-without-requiring-a-backend-e-g-using-a-mailto-link-or-on-screen-submission-confirmation",
+      "featureTitle": "Implement a Contact page with a contact form (name, email, message) that performs client-side validation and provides a clear success state without requiring a backend (e.g., using a mailto link or on-screen submission confirmation).",
+      "files": [
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/utils/validation.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-distinctive-visual-theme-appropriate-for-a-fashion-clothing-brand-colors-typography-spacing-components-and-enforce-it-consistently-across-all-pages-and-components",
+      "featureTitle": "Apply a cohesive, distinctive visual theme appropriate for a fashion/clothing brand (colors, typography, spacing, components) and enforce it consistently across all pages and components.",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-brand-visuals-as-static-assets-and-use-them-in-the-ui-logo-in-header-hero-image-on-home-and-at-least-one-supporting-lifestyle-banner-image-store-assets-under-frontend-public-assets-generated",
+      "featureTitle": "Add generated brand visuals as static assets and use them in the UI (logo in header, hero image on Home, and at least one supporting lifestyle/banner image). Store assets under frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

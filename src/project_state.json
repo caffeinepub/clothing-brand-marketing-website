@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Website project for a clothing brand.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Minimalist fashion brand logo, monochrome, clean geometric mark (brand-logo.dim_512x512.png)\n- Fashion editorial hero banner with neutral tones and ample negative space (hero-banner.dim_1920x900.png)\n- Lifestyle clothing photography-style banner with soft lighting and modern streetwear vibe (lifestyle-banner.dim_1600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-clothing-brand-website-with-core-marketing-pages-home-collections-product-listing-about-and-contact-with-a-persistent-header-navigation-and-footer-across-all-pages",
+      "title": "Create a responsive clothing brand website with core marketing pages: Home, Collections (product listing), About, and Contact, with a persistent header navigation and footer across all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-home-page-sections-suitable-for-a-clothing-brand-hero-banner-with-headline-and-call-to-action-featured-collections-products-and-a-brand-values-usp-section",
+      "title": "Implement Home page sections suitable for a clothing brand: hero banner with headline and call-to-action, featured collections/products, and a brand values/USP section.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-collections-page-that-displays-a-browsable-product-grid-using-a-simple-in-app-dataset-and-a-product-details-view-modal-or-separate-page-showing-images-description-price-sizes-and-an-add-to-cart-button-cart-can-be-client-side-only",
+      "title": "Implement a Collections page that displays a browsable product grid (using a simple in-app dataset) and a Product Details view (modal or separate page) showing images, description, price, sizes, and an \"Add to Cart\" button (cart can be client-side only).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-contact-page-with-a-contact-form-name-email-message-that-performs-client-side-validation-and-provides-a-clear-success-state-without-requiring-a-backend-e-g-using-a-mailto-link-or-on-screen-submission-confirmation",
+      "title": "Implement a Contact page with a contact form (name, email, message) that performs client-side validation and provides a clear success state without requiring a backend (e.g., using a mailto link or on-screen submission confirmation).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-distinctive-visual-theme-appropriate-for-a-fashion-clothing-brand-colors-typography-spacing-components-and-enforce-it-consistently-across-all-pages-and-components",
+      "title": "Apply a cohesive, distinctive visual theme appropriate for a fashion/clothing brand (colors, typography, spacing, components) and enforce it consistently across all pages and components.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-brand-visuals-as-static-assets-and-use-them-in-the-ui-logo-in-header-hero-image-on-home-and-at-least-one-supporting-lifestyle-banner-image-store-assets-under-frontend-public-assets-generated",
+      "title": "Add generated brand visuals as static assets and use them in the UI (logo in header, hero image on Home, and at least one supporting lifestyle/banner image). Store assets under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website for a clothing brand.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Clothing Brand Marketing Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
